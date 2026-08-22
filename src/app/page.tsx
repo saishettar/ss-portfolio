@@ -10,6 +10,7 @@ type Project = {
   repo: string;
   language: string;
   live?: string;
+  stars: number;
   summary: string;
 };
 
@@ -35,6 +36,7 @@ const projects: Project[] = [
     name: "Iris",
     repo: "https://github.com/saishettar/iris",
     language: "TypeScript",
+    stars: 1,
     summary:
       "Self-hosted, OpenTelemetry-native tracing and evaluation platform for LLM/agent pipelines that catches prompt regressions before they ship.",
   },
@@ -42,6 +44,7 @@ const projects: Project[] = [
     name: "Deepslate",
     repo: "https://github.com/saishettar/deepslate",
     language: "Rust",
+    stars: 0,
     summary:
       "A dynamically-typed, bytecode-compiled programming language built in Rust, with a mark-and-sweep garbage collector.",
   },
@@ -49,6 +52,7 @@ const projects: Project[] = [
     name: "NYU Course RAG Assistant",
     repo: "https://github.com/saishettar/nyu-rag",
     language: "TypeScript",
+    stars: 0,
     summary:
       "Natural-language RAG assistant over NYU's CS course catalog, answering questions with grounded, cited results.",
   },
@@ -57,6 +61,7 @@ const projects: Project[] = [
     repo: "https://github.com/saishettar/undercut",
     language: "Python",
     live: "https://f1-race-strategy-agent.vercel.app",
+    stars: 0,
     summary:
       "Live F1 pit-strategy agent replayed from real OpenF1 telemetry, with rule-based or Claude tool-use reasoning.",
   },
@@ -64,6 +69,7 @@ const projects: Project[] = [
     name: "Soberanes",
     repo: "https://github.com/saishettar/soberanes",
     language: "Python",
+    stars: 0,
     summary:
       "Cellular-automaton wildfire spread simulator driven by real terrain, fuel, and wind data, validated against the Soberanes and Dolan fires.",
   },
@@ -71,6 +77,7 @@ const projects: Project[] = [
     name: "Micromanager",
     repo: "https://github.com/saishettar/micromanager",
     language: "TypeScript",
+    stars: 0,
     summary:
       "Passive-aggressive JS/TS linter that roasts bad variable names instead of catching bugs.",
   },
@@ -79,98 +86,89 @@ const projects: Project[] = [
     repo: "https://github.com/saishettar/tire-deg-model",
     language: "Python",
     live: "https://f1-tire-degradation.lovable.app/",
+    stars: 0,
     summary:
       "ML pipeline predicting F1 tire degradation from telemetry, with model comparison and a live Streamlit demo.",
   },
 ];
 
-const skills: { label: string; items: string[] }[] = [
-  {
-    label: "Languages",
-    items: [
-      "Python",
-      "Java",
-      "C++",
-      "C",
-      "JavaScript",
-      "Rust",
-      "TypeScript",
-      "HTML/CSS",
-      "SQL",
-    ],
-  },
-  {
-    label: "Frameworks",
-    items: ["React", "Node.js", "FastAPI", "Pydantic", "Next.js", "Streamlit"],
-  },
-  {
-    label: "Developer Tools",
-    items: [
-      "AWS Bedrock",
-      "AWS Athena",
-      "AWS Glue",
-      "Docker",
-      "Git",
-      "GitLab CI/CD",
-      "Tableau",
-      "PostgreSQL",
-      "SQLite",
-    ],
-  },
-  {
-    label: "Libraries",
-    items: [
-      "Pandas",
-      "NumPy",
-      "Scikit-learn",
-      "Matplotlib",
-      "Seaborn",
-      "pgvector",
-      "Visx/D3",
-      "React Flow",
-      "Recharts",
-    ],
-  },
+const skills: string[] = [
+  "Python",
+  "Java",
+  "C++",
+  "C",
+  "JavaScript",
+  "Rust",
+  "TypeScript",
+  "HTML/CSS",
+  "SQL",
+  "React",
+  "Node.js",
+  "FastAPI",
+  "Pydantic",
+  "Next.js",
+  "Streamlit",
+  "AWS Bedrock",
+  "AWS Athena",
+  "AWS Glue",
+  "Docker",
+  "Git",
+  "GitLab CI/CD",
+  "Tableau",
+  "PostgreSQL",
+  "SQLite",
+  "Pandas",
+  "NumPy",
+  "Scikit-learn",
+  "Matplotlib",
+  "Seaborn",
+  "pgvector",
+  "Visx/D3",
+  "React Flow",
+  "Recharts",
 ];
 
 function SectionHeader({ children }: { children: string }) {
   return (
-    <h2 className="text-xs tracking-[0.15em] text-muted border-b border-rule pb-2">
+    <h2 className="text-sm uppercase tracking-widest text-[#8a847a] mb-4 border-b border-[#d9d3c7] pb-2">
       {children}
     </h2>
   );
 }
 
-function Pill({ children }: { children: string }) {
-  return (
-    <span className="inline-block rounded bg-pill-bg border border-pill-border px-2 py-1 text-xs">
-      {children}
-    </span>
-  );
-}
-
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-2xl px-6 py-16 flex flex-col gap-10">
-      <header className="flex flex-col gap-2">
-        <h1 className="text-4xl font-bold">Sai Shettar</h1>
-        <p>Computer Science @ NYU</p>
-        <p className="text-sm text-muted">New York, NY</p>
-        <div className="flex flex-wrap gap-x-4 gap-y-1 pt-2 text-sm">
+    <main className="max-w-2xl mx-auto px-6 py-16">
+      <header className="mb-12">
+        <h1 className="text-4xl font-bold text-[#2c2a26] mb-2">
+          Sai Shettar
+        </h1>
+        <p className="text-lg text-[#5c584e]">Computer Science @ NYU</p>
+        <p className="text-sm text-[#7a756a] mt-1">New York, NY</p>
+      </header>
+
+      <section className="mb-12">
+        <div className="flex flex-wrap gap-4 text-sm">
           <a
             href="https://github.com/saishettar"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
+            className="text-[#6b5b4d] hover:text-[#3d3a35] underline underline-offset-4 transition-colors"
           >
             github.com/saishettar
           </a>
-          <a href="mailto:saishettar@nyu.edu">saishettar@nyu.edu</a>
+          <a
+            href="mailto:saishettar@nyu.edu"
+            className="text-[#6b5b4d] hover:text-[#3d3a35] underline underline-offset-4 transition-colors"
+          >
+            saishettar@nyu.edu
+          </a>
         </div>
-      </header>
+      </section>
 
-      <section className="flex flex-col gap-4">
-        <SectionHeader>ABOUT</SectionHeader>
-        <p className="leading-relaxed">
+      <section className="mb-12">
+        <SectionHeader>About</SectionHeader>
+        <p className="leading-relaxed text-[#4a473f]">
           Computer Science student and software engineer building full-stack
           and agentic systems — observability tooling, LLM-driven agents, and
           data platforms. Experienced with Python, TypeScript, React, and
@@ -178,71 +176,76 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="flex flex-col gap-6">
-        <SectionHeader>EXPERIENCE</SectionHeader>
+      <section className="mb-12">
+        <SectionHeader>Experience</SectionHeader>
         {experience.map((job) => (
-          <div key={job.company} className="flex flex-col gap-1">
-            <div className="flex items-baseline justify-between gap-4">
-              <h3 className="font-bold">{job.company}</h3>
-              <span className="text-sm text-muted whitespace-nowrap">
-                {job.dates}
-              </span>
+          <div key={job.company} className="mb-8">
+            <div className="flex justify-between items-start mb-1">
+              <h3 className="font-semibold text-[#2c2a26]">{job.company}</h3>
+              <span className="text-sm text-[#7a756a]">{job.dates}</span>
             </div>
-            <p className="text-sm italic text-muted">{job.role}</p>
-            <p className="text-sm leading-relaxed">{job.summary}</p>
+            <p className="text-sm text-[#5c584e] mb-2">{job.role}</p>
+            <p className="text-sm text-[#7a756a] italic">{job.summary}</p>
           </div>
         ))}
       </section>
 
-      <section className="flex flex-col gap-6">
-        <SectionHeader>PROJECTS</SectionHeader>
-        {projects.map((project) => (
-          <div key={project.name} className="flex flex-col gap-1">
-            <div className="flex items-baseline justify-between gap-4">
-              <h3 className="flex items-baseline gap-2">
-                <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-bold"
-                >
-                  {project.name}
-                </a>
-                {project.live && (
+      <section className="mb-12">
+        <SectionHeader>Projects</SectionHeader>
+        <ul className="space-y-6">
+          {projects.map((project) => (
+            <li key={project.name}>
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
                   <a
-                    href={project.live}
+                    href={project.repo}
                     target="_blank"
-                    rel="noreferrer"
-                    className="text-sm text-muted"
+                    rel="noopener noreferrer"
+                    className="text-[#4a3f35] hover:text-[#2c2a26] font-medium underline underline-offset-4 transition-colors"
                   >
-                    [live &rarr;]
+                    {project.name}
                   </a>
-                )}
-              </h3>
-              <Pill>{project.language}</Pill>
-            </div>
-            <p className="text-sm leading-relaxed">{project.summary}</p>
-          </div>
-        ))}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ml-3 text-xs text-[#8a847a] hover:text-[#5c584e] transition-colors"
+                    >
+                      [live &rarr;]
+                    </a>
+                  )}
+                  <p className="text-sm text-[#6b655a] mt-1">
+                    {project.summary}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 text-xs text-[#8a847a] shrink-0">
+                  <span className="px-2 py-0.5 bg-[#e8e2d6] rounded">
+                    {project.language}
+                  </span>
+                  {project.stars > 0 && <span>&#9733; {project.stars}</span>}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
       </section>
 
-      <section className="flex flex-col gap-4">
-        <SectionHeader>SKILLS</SectionHeader>
-        <div className="flex flex-col gap-3">
-          {skills.map((group) => (
-            <div key={group.label} className="flex flex-col gap-2">
-              <p className="text-xs text-muted">{group.label}</p>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <Pill key={item}>{item}</Pill>
-                ))}
-              </div>
-            </div>
+      <section className="mb-12">
+        <SectionHeader>Skills</SectionHeader>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((item) => (
+            <span
+              key={item}
+              className="px-3 py-1 bg-[#e8e2d6] text-[#5c584e] text-sm rounded"
+            >
+              {item}
+            </span>
           ))}
         </div>
       </section>
 
-      <footer className="border-t border-rule pt-4 text-xs text-muted">
+      <footer className="pt-8 border-t border-[#d9d3c7] text-sm text-[#8a847a]">
         Built with Next.js
       </footer>
     </main>
