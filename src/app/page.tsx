@@ -7,9 +7,9 @@ type Experience = {
 
 type Project = {
   name: string;
-  repo?: string;
-  dates: string;
-  stack: string;
+  repo: string;
+  language: string;
+  live?: string;
   summary: string;
 };
 
@@ -33,27 +33,54 @@ const experience: Experience[] = [
 const projects: Project[] = [
   {
     name: "Iris",
-    repo: undefined,
-    dates: "Aug 2026",
-    stack: "Python, FastAPI, PostgreSQL, OpenTelemetry, React",
+    repo: "https://github.com/saishettar/iris",
+    language: "TypeScript",
     summary:
-      "Self-hosted, OpenTelemetry-native observability platform for LLM/agent pipelines with a YAML-driven eval framework.",
+      "Self-hosted, OpenTelemetry-native tracing and evaluation platform for LLM/agent pipelines that catches prompt regressions before they ship.",
   },
   {
-    name: "Undercut",
-    repo: undefined,
-    dates: "Aug 2026",
-    stack: "React, FastAPI, Python, Claude API, NumPy, Vercel",
+    name: "Deepslate",
+    repo: "https://github.com/saishettar/deepslate",
+    language: "Rust",
     summary:
-      "Full-stack F1 strategy agent that replays real race telemetry and uses Claude tool-use to reason about pit stops.",
+      "A dynamically-typed, bytecode-compiled programming language built in Rust, with a mark-and-sweep garbage collector.",
   },
   {
     name: "NYU Course RAG Assistant",
-    repo: undefined,
-    dates: "Aug 2026",
-    stack: "Python, FastAPI, PostgreSQL/pgvector, React, TypeScript",
+    repo: "https://github.com/saishettar/nyu-rag",
+    language: "TypeScript",
     summary:
-      "Natural-language RAG Q&A system over 133 NYU courses combining semantic search with prerequisite-aware retrieval.",
+      "Natural-language RAG assistant over NYU's CS course catalog, answering questions with grounded, cited results.",
+  },
+  {
+    name: "Undercut",
+    repo: "https://github.com/saishettar/undercut",
+    language: "Python",
+    live: "https://f1-race-strategy-agent.vercel.app",
+    summary:
+      "Live F1 pit-strategy agent replayed from real OpenF1 telemetry, with rule-based or Claude tool-use reasoning.",
+  },
+  {
+    name: "Soberanes",
+    repo: "https://github.com/saishettar/soberanes",
+    language: "Python",
+    summary:
+      "Cellular-automaton wildfire spread simulator driven by real terrain, fuel, and wind data, validated against the Soberanes and Dolan fires.",
+  },
+  {
+    name: "Micromanager",
+    repo: "https://github.com/saishettar/micromanager",
+    language: "TypeScript",
+    summary:
+      "Passive-aggressive JS/TS linter that roasts bad variable names instead of catching bugs.",
+  },
+  {
+    name: "Tire Degradation Model",
+    repo: "https://github.com/saishettar/tire-deg-model",
+    language: "Python",
+    live: "https://f1-tire-degradation.lovable.app/",
+    summary:
+      "ML pipeline predicting F1 tire degradation from telemetry, with model comparison and a live Streamlit demo.",
   },
 ];
 
@@ -174,22 +201,27 @@ export default function Home() {
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="font-bold flex items-center gap-2">
                 {project.name}
-                {project.repo && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xs font-normal"
+                >
+                  [github]
+                </a>
+                {project.live && (
                   <a
-                    href={project.repo}
+                    href={project.live}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs font-normal not-italic"
+                    className="text-xs font-normal"
                   >
-                    [github]
+                    [live &rarr;]
                   </a>
                 )}
               </h3>
-              <span className="text-sm text-muted whitespace-nowrap">
-                {project.dates}
-              </span>
+              <Pill>{project.language}</Pill>
             </div>
-            <p className="text-sm italic text-muted">{project.stack}</p>
             <p className="text-sm leading-relaxed">{project.summary}</p>
           </div>
         ))}
