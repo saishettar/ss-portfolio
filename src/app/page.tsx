@@ -199,22 +199,21 @@ export default function Home() {
         {projects.map((project) => (
           <div key={project.name} className="flex flex-col gap-1">
             <div className="flex items-baseline justify-between gap-4">
-              <h3 className="font-bold flex items-center gap-2">
-                {project.name}
+              <h3 className="flex items-baseline gap-2">
                 <a
                   href={project.repo}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-xs font-normal"
+                  className="font-bold"
                 >
-                  [github]
+                  {project.name}
                 </a>
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-xs font-normal"
+                    className="text-sm text-muted"
                   >
                     [live &rarr;]
                   </a>
