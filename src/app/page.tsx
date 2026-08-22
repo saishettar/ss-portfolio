@@ -10,7 +10,6 @@ type Project = {
   repo: string;
   language: string;
   live?: string;
-  stars: number;
   summary: string;
 };
 
@@ -36,7 +35,6 @@ const projects: Project[] = [
     name: "Iris",
     repo: "https://github.com/saishettar/iris",
     language: "TypeScript",
-    stars: 1,
     summary:
       "Self-hosted, OpenTelemetry-native tracing and evaluation platform for LLM/agent pipelines that catches prompt regressions before they ship.",
   },
@@ -44,7 +42,6 @@ const projects: Project[] = [
     name: "Deepslate",
     repo: "https://github.com/saishettar/deepslate",
     language: "Rust",
-    stars: 0,
     summary:
       "A dynamically-typed, bytecode-compiled programming language built in Rust, with a mark-and-sweep garbage collector.",
   },
@@ -52,7 +49,6 @@ const projects: Project[] = [
     name: "NYU Course RAG Assistant",
     repo: "https://github.com/saishettar/nyu-rag",
     language: "TypeScript",
-    stars: 0,
     summary:
       "Natural-language RAG assistant over NYU's CS course catalog, answering questions with grounded, cited results.",
   },
@@ -61,7 +57,6 @@ const projects: Project[] = [
     repo: "https://github.com/saishettar/undercut",
     language: "Python",
     live: "https://f1-race-strategy-agent.vercel.app",
-    stars: 0,
     summary:
       "Live F1 pit-strategy agent replayed from real OpenF1 telemetry, with rule-based or Claude tool-use reasoning.",
   },
@@ -69,7 +64,6 @@ const projects: Project[] = [
     name: "Soberanes",
     repo: "https://github.com/saishettar/soberanes",
     language: "Python",
-    stars: 0,
     summary:
       "Cellular-automaton wildfire spread simulator driven by real terrain, fuel, and wind data, validated against the Soberanes and Dolan fires.",
   },
@@ -77,7 +71,6 @@ const projects: Project[] = [
     name: "Micromanager",
     repo: "https://github.com/saishettar/micromanager",
     language: "TypeScript",
-    stars: 0,
     summary:
       "Passive-aggressive JS/TS linter that roasts bad variable names instead of catching bugs.",
   },
@@ -86,7 +79,6 @@ const projects: Project[] = [
     repo: "https://github.com/saishettar/tire-deg-model",
     language: "Python",
     live: "https://f1-tire-degradation.lovable.app/",
-    stars: 0,
     summary:
       "ML pipeline predicting F1 tire degradation from telemetry, with model comparison and a live Streamlit demo.",
   },
@@ -169,10 +161,10 @@ export default function Home() {
       <section className="mb-12">
         <SectionHeader>About</SectionHeader>
         <p className="leading-relaxed text-[#4a473f]">
-          Computer Science student and software engineer building full-stack
-          and agentic systems — observability tooling, LLM-driven agents, and
-          data platforms. Experienced with Python, TypeScript, React, and
-          FastAPI.
+          Computer Science student and software engineer interested in
+          natural language processing, agentic systems, and applied machine
+          learning. Experienced with Java, Python, TypeScript, React, and
+          more.
         </p>
       </section>
 
@@ -223,7 +215,6 @@ export default function Home() {
                   <span className="px-2 py-0.5 bg-[#e8e2d6] rounded">
                     {project.language}
                   </span>
-                  {project.stars > 0 && <span>&#9733; {project.stars}</span>}
                 </div>
               </div>
             </li>
