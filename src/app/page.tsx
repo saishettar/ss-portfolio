@@ -61,7 +61,7 @@ const projects: Project[] = [
       "Cellular-automaton wildfire spread simulator driven by real terrain, fuel, and wind data, validated against the Soberanes and Dolan fires.",
   },
   {
-    name: "Deepslate",
+    name: "Quicksilver",
     repo: "https://github.com/saishettar/deepslate",
     language: "Rust",
     summary:
