@@ -65,7 +65,7 @@ const projects: Project[] = [
     repo: "https://github.com/saishettar/quicksilver",
     language: "Rust",
     summary:
-      "A dynamically-typed, bytecode-compiled programming language built in Rust, with a mark-and-sweep garbage collector.",
+      "A dynamically-typed, bytecode-compiled programming language built in Rust, with reference-counted memory management.",
   },
   {
     name: "Marque",
