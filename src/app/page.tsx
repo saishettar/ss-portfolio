@@ -39,11 +39,12 @@ const projects: Project[] = [
       "Self-hosted, OpenTelemetry-native tracing and evaluation platform for LLM/agent pipelines that catches prompt regressions before they ship.",
   },
   {
-    name: "Deepslate",
-    repo: "https://github.com/saishettar/deepslate",
-    language: "Rust",
+    name: "Undercut",
+    repo: "https://github.com/saishettar/undercut",
+    language: "Python",
+    live: "https://f1-race-strategy-agent.vercel.app",
     summary:
-      "A dynamically-typed, bytecode-compiled programming language built in Rust, with a mark-and-sweep garbage collector.",
+      "Live F1 pit-strategy agent replayed from real OpenF1 telemetry, with rule-based or Claude tool-use reasoning.",
   },
   {
     name: "NYU Course RAG Assistant",
@@ -53,14 +54,6 @@ const projects: Project[] = [
       "Natural-language RAG assistant over NYU's CS course catalog, answering questions with grounded, cited results.",
   },
   {
-    name: "Undercut",
-    repo: "https://github.com/saishettar/undercut",
-    language: "Python",
-    live: "https://f1-race-strategy-agent.vercel.app",
-    summary:
-      "Live F1 pit-strategy agent replayed from real OpenF1 telemetry, with rule-based or Claude tool-use reasoning.",
-  },
-  {
     name: "Soberanes",
     repo: "https://github.com/saishettar/soberanes",
     language: "Python",
@@ -68,11 +61,18 @@ const projects: Project[] = [
       "Cellular-automaton wildfire spread simulator driven by real terrain, fuel, and wind data, validated against the Soberanes and Dolan fires.",
   },
   {
-    name: "Micromanager",
-    repo: "https://github.com/saishettar/micromanager",
-    language: "TypeScript",
+    name: "Deepslate",
+    repo: "https://github.com/saishettar/deepslate",
+    language: "Rust",
     summary:
-      "Passive-aggressive JS/TS linter that roasts bad variable names instead of catching bugs.",
+      "A dynamically-typed, bytecode-compiled programming language built in Rust, with a mark-and-sweep garbage collector.",
+  },
+  {
+    name: "Marque",
+    repo: "https://github.com/saishettar/marque",
+    language: "Python",
+    summary:
+      "A regression model that predicts collector-car auction prices from real Monterey Car Week results.",
   },
   {
     name: "Tire Degradation Model",
@@ -83,11 +83,11 @@ const projects: Project[] = [
       "ML pipeline predicting F1 tire degradation from telemetry, with model comparison and a live Streamlit demo.",
   },
   {
-    name: "Marque",
-    repo: "https://github.com/saishettar/marque",
-    language: "Python",
+    name: "Micromanager",
+    repo: "https://github.com/saishettar/micromanager",
+    language: "TypeScript",
     summary:
-      "A regression model that predicts collector-car auction prices from real Monterey Car Week results.",
+      "Passive-aggressive JS/TS linter that roasts bad variable names instead of catching bugs.",
   },
 ];
 
