@@ -82,6 +82,13 @@ const projects: Project[] = [
     summary:
       "ML pipeline predicting F1 tire degradation from telemetry, with model comparison and a live Streamlit demo.",
   },
+  {
+    name: "Marque",
+    repo: "https://github.com/saishettar/marque",
+    language: "Python",
+    summary:
+      "A regression model that predicts collector-car auction prices from real Monterey Car Week results.",
+  },
 ];
 
 const skills: string[] = [
