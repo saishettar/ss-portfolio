@@ -71,6 +71,7 @@ const projects: Project[] = [
     name: "Marque",
     repo: "https://github.com/saishettar/marque",
     language: "Python",
+    live: "https://marque.streamlit.app/",
     summary:
       "A regression model that predicts collector-car auction prices from real Monterey Car Week results.",
   },
