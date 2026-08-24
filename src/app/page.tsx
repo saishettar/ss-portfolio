@@ -39,7 +39,7 @@ const projects: Project[] = [
       "Self-hosted, OpenTelemetry-native tracing and evaluation platform for LLM/agent pipelines that catches prompt regressions before they ship.",
   },
   {
-    name: "flare-forecast",
+    name: "Flare-forecast",
     repo: "https://github.com/saishettar/flare-forecast",
     language: "Python",
     summary:
