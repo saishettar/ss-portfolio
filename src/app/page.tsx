@@ -39,6 +39,13 @@ const projects: Project[] = [
       "Self-hosted, OpenTelemetry-native tracing and evaluation platform for LLM/agent pipelines that catches prompt regressions before they ship.",
   },
   {
+    name: "flare-forecast",
+    repo: "https://github.com/saishettar/flare-forecast",
+    language: "Python",
+    summary:
+      "Predicting IBD flares from longitudinal gut microbiome multi-omics data (HMP2) validated against real clinical disease-activity scores.",
+  },
+  {
     name: "Undercut",
     repo: "https://github.com/saishettar/undercut",
     language: "Python",
