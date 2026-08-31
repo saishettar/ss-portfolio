@@ -32,6 +32,13 @@ const experience: Experience[] = [
 
 const projects: Project[] = [
   {
+    name: "Sentinel",
+    repo: "https://github.com/saishettar/sentinel",
+    language: "TypeScript",
+    summary:
+      "Automated PR risk review for GitHub that combines static checks with an LLM pass and surfaces findings on a live dashboard.",
+  },
+  {
     name: "Iris",
     repo: "https://github.com/saishettar/iris",
     language: "TypeScript",
