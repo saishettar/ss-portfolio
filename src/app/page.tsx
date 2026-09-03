@@ -61,20 +61,6 @@ const projects: Project[] = [
       "Natural-language RAG assistant over NYU's CS course catalog, answering questions with grounded, cited results.",
   },
   {
-    name: "Soberanes",
-    repo: "https://github.com/saishettar/soberanes",
-    language: "Python",
-    summary:
-      "Cellular-automaton wildfire spread simulator driven by real terrain, fuel, and wind data, validated against the Soberanes and Dolan fires.",
-  },
-  {
-    name: "Quicksilver",
-    repo: "https://github.com/saishettar/quicksilver",
-    language: "Rust",
-    summary:
-      "A dynamically-typed, bytecode-compiled programming language built in Rust, with reference-counted memory management.",
-  },
-  {
     name: "Marque",
     repo: "https://github.com/saishettar/marque",
     language: "Python",
