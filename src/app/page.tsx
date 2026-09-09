@@ -58,7 +58,7 @@ const projects: Project[] = [
     repo: "https://github.com/saishettar/nyu-rag",
     language: "TypeScript",
     summary:
-      "Natural-language RAG assistant over NYU's CS course catalog, answering questions with grounded, cited results.",
+      "Natural-language RAG assistant over NYU's course catalog, answering questions with grounded, cited results.",
   },
   {
     name: "Marque",
